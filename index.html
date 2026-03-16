@@ -5,48 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAM Studio — Design, Strategy & Production</title>
     
-    <meta name="description" content="MAM Studio is a boutique studio specializing in the strategy, design, and production of in-person experiences. Founded by Maia Minovich.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         * { font-family: 'Inter', sans-serif; }
-        
-        /* Mejoras de legibilidad y estética */
         .text-balance { text-wrap: balance; }
-        .lang-btn { cursor: pointer; opacity: 0.4; transition: 0.3s; font-size: 0.7rem; letter-spacing: 0.15em; font-weight: 700; }
+        .lang-btn { cursor: pointer; opacity: 0.4; transition: 0.3s; font-size: 0.7rem; letter-spacing: 0.15em; font-weight: 700; background: none; border: none; color: inherit; }
         .lang-btn.active { opacity: 1; border-bottom: 2px solid black; }
-        
-        /* Animación suave para imágenes */
-        .img-container img { transform: scale(1); transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .img-container img { transition: transform 1.5s ease; }
         .img-container:hover img { transform: scale(1.05); }
     </style>
 </head>
-<body class="bg-white text-black antialiased selection:bg-gray-100">
+<body class="bg-white text-black antialiased">
 
-    <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100">
+    <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-gray-100">
         <nav class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
             <a href="#" class="text-xl font-bold tracking-tighter">MAM Studio</a>
             
             <div class="hidden md:flex items-center space-x-10 text-[10px] uppercase tracking-[0.25em] font-bold">
-                <a href="#work" data-key="nav_work" class="hover:text-gray-400 transition-colors">Work</a>
-                <a href="#services" data-key="nav_services" class="hover:text-gray-400 transition-colors">Services</a>
-                <a href="#about" data-key="nav_about" class="hover:text-gray-400 transition-colors">About</a>
-                <a href="#contact" data-key="nav_contact" class="hover:text-gray-400 transition-colors">Contact</a>
+                <a href="#work" data-key="nav_work" class="hover:text-gray-400">Work</a>
+                <a href="#services" data-key="nav_services" class="hover:text-gray-400">Services</a>
+                <a href="#about" data-key="nav_about" class="hover:text-gray-400">About</a>
+                <a href="#contact" data-key="nav_contact" class="hover:text-gray-400">Contact</a>
                 
                 <div class="flex gap-4 border-l pl-8 border-gray-200">
                     <button onclick="changeLanguage('es')" id="btn-es" class="lang-btn">ES</button>
                     <button onclick="changeLanguage('en')" id="btn-en" class="lang-btn active">EN</button>
                 </div>
             </div>
-            
-            <button class="md:hidden"><i data-lucide="menu" class="w-5 h-5"></i></button>
+            <button class="md:hidden"><i data-lucide="menu"></i></button>
         </nav>
     </header>
 
     <main class="pt-24">
-        <section class="min-h-[85vh] flex flex-col justify-center px-6 max-w-7xl mx-auto">
+        <section class="min-h-[80vh] flex flex-col justify-center px-6 max-w-7xl mx-auto">
             <div class="max-w-5xl">
                 <h1 class="text-[10px] uppercase tracking-[0.6em] text-gray-400 mb-12 font-bold">MAM Studio</h1>
                 <h2 class="text-5xl md:text-8xl font-light tracking-tight leading-[1.05] mb-10 text-balance" data-key="hero_sub">
@@ -66,7 +60,7 @@
             
             <div class="grid gap-40">
                 <article class="group">
-                    <div class="img-container aspect-[16/9] bg-gray-50 mb-12 overflow-hidden cursor-pointer">
+                    <div class="img-container aspect-[16/9] bg-gray-50 mb-12 overflow-hidden">
                         <img src="img/community.jpg" alt="Community" class="w-full h-full object-cover grayscale group-hover:grayscale-0">
                     </div>
                     <div class="grid md:grid-cols-12 gap-8">
@@ -75,14 +69,14 @@
                             <p class="text-2xl text-gray-400 font-light leading-relaxed mb-8" data-key="cat1_desc">Experiences designed to bring people together around shared ideas, projects and communities.</p>
                         </div>
                         <div class="md:col-span-4 md:text-right self-end pb-2">
-                            <p class="text-[10px] font-bold text-gray-300 uppercase tracking-widest mb-2" data-key="projects_label">Projects</p>
+                            <p class="text-[10px] font-bold text-gray-300 uppercase tracking-widest mb-2">Projects</p>
                             <p class="text-sm font-medium">WalletCon — Devconnect Buenos Aires</p>
                         </div>
                     </div>
                 </article>
 
                 <article class="group">
-                    <div class="img-container aspect-[16/9] bg-gray-50 mb-12 overflow-hidden cursor-pointer">
+                    <div class="img-container aspect-[16/9] bg-gray-50 mb-12 overflow-hidden">
                         <img src="img/team.jpg" alt="Team" class="w-full h-full object-cover grayscale group-hover:grayscale-0">
                     </div>
                     <div class="grid md:grid-cols-12 gap-8">
@@ -91,20 +85,73 @@
                             <p class="text-2xl text-gray-400 font-light leading-relaxed mb-8" data-key="cat2_desc">In-person gatherings designed to support collaboration, alignment and team culture.</p>
                         </div>
                         <div class="md:col-span-4 md:text-right self-end pb-2">
-                            <p class="text-[10px] font-bold text-gray-300 uppercase tracking-widest mb-2" data-key="projects_label">Projects</p>
+                            <p class="text-[10px] font-bold text-gray-300 uppercase tracking-widest mb-2">Projects</p>
                             <p class="text-sm font-medium">Reown Offsite — Buenos Aires</p>
                         </div>
                     </div>
                 </article>
+            </div>
+        </section>
 
-                <article class="group">
-                    <div class="img-container aspect-[16/9] bg-gray-50 mb-12 overflow-hidden cursor-pointer">
-                        <img src="img/intimate.jpg" alt="Intimate" class="w-full h-full object-cover grayscale group-hover:grayscale-0">
+        <section id="about" class="py-40 px-6 bg-black text-white">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-[10px] uppercase tracking-[0.4em] font-bold mb-24 text-gray-600" data-key="nav_about">About</h2>
+                <div class="grid md:grid-cols-12 gap-12 items-end">
+                    <div class="md:col-span-8 text-3xl md:text-5xl font-light leading-[1.2] tracking-tight space-y-10" data-key="about_text">
+                        <p>MAM Studio is a boutique studio founded by Maia Minovich.</p>
+                        <p>With over 15 years of experience in cultural programming and international events, the studio works with teams looking to create thoughtful in-person experiences.</p>
                     </div>
-                    <div class="grid md:grid-cols-12 gap-8">
-                        <div class="md:col-span-8">
-                            <h3 class="text-4xl font-medium tracking-tight mb-6" data-key="cat3_title">Intimate Gatherings</h3>
-                            <p class="text-2xl text-gray-400 font-light leading-relaxed mb-8" data-key="cat3_desc">Smaller-scale experiences designed to foster conversation, connection and atmosphere.</p>
-                        </div>
-                        <div class="md:col-span-4 md:text-right self-end pb-2">
-                            <p class="text-[10px] font
+                    <div class="md:col-span-4 md:text-right">
+                        <a href="https://linkedin.com/in/maiaminovich" target="_blank" class="inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] font-bold border-b border-white pb-2 transition-all">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-48 px-6 text-center max-w-7xl mx-auto">
+            <h2 class="text-5xl md:text-9xl font-bold tracking-tighter mb-16 text-balance" data-key="contact_cta">Let’s build something together.</h2>
+            <a href="mailto:hello@mamstudio.xyz" class="text-2xl md:text-4xl font-light border-b-2 border-black pb-2 transition-all">hello@mamstudio.xyz</a>
+        </section>
+    </main>
+
+    <script>
+        const translations = {
+            es: {
+                nav_work: "Trabajo", nav_services: "Servicios", nav_about: "Estudio", nav_contact: "Contacto",
+                hero_sub: "Diseño, estrategia y producción de experiencias presenciales.",
+                hero_desc: "Estudio boutique con base en Buenos Aires.", hero_cta: "Proyectos Seleccionados",
+                cat1_title: "Community Experiences", cat1_desc: "Experiencias diseñadas para reunir personas en torno a ideas, proyectos y comunidades compartidas.",
+                cat2_title: "Team Experiences", cat2_desc: "Encuentros presenciales diseñados para apoyar la colaboración, la alineación y la cultura de equipo.",
+                about_text: "<p>MAM Studio es un estudio boutique fundado por Maia Minovich.</p><p>Con más de 15 años de trayectoria en programación cultural y eventos internacionales, el estudio trabaja con equipos que buscan crear experiencias presenciales profundas.</p>",
+                contact_cta: "Construyamos algo juntos."
+            },
+            en: {
+                nav_work: "Work", nav_services: "Services", nav_about: "About", nav_contact: "Contact",
+                hero_sub: "Design, strategy and production for in-person experiences.",
+                hero_desc: "Boutique studio based in Buenos Aires.", hero_cta: "Selected Work",
+                cat1_title: "Community Experiences", cat1_desc: "Experiences designed to bring people together around shared ideas, projects and communities.",
+                cat2_title: "Team Experiences", cat2_desc: "In-person gatherings designed to support collaboration, alignment and team culture.",
+                about_text: "<p>MAM Studio is a boutique studio founded by Maia Minovich.</p><p>With over 15 years of experience in cultural programming and international events, the studio works with teams looking to create thoughtful in-person experiences.</p>",
+                contact_cta: "Let’s build something together."
+            }
+        };
+
+        function changeLanguage(lang) {
+            localStorage.setItem('preferredLang', lang);
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) el.innerHTML = translations[lang][key];
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
+            document.documentElement.lang = lang;
+        }
+
+        window.onload = () => {
+            const savedLang = localStorage.getItem('preferredLang') || 'en';
+            changeLanguage(savedLang);
+            if (window.lucide) window.lucide.createIcons();
+        };
+    </script>
+</body>
+</html>
