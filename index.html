@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mam — Strategy, Design & Production</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        
+        .gradient-text {
+            background: linear-gradient(to right, #c084fc, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .lang-btn { cursor: pointer; opacity: 0.5; transition: 0.2s; }
+        .lang-btn.active { opacity: 1; font-weight: bold; color: #c084fc; }
+    </style>
+</head>
+<body class="bg-black text-white antialiased">
+
+    <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+            <a href="#" class="text-xl font-extrabold tracking-tighter">mam</a>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm uppercase tracking-widest font-medium">
+                <a href="#projects" data-key="nav_projects" class="hover:text-purple-400 transition-colors">Proyectos</a>
+                <a href="#about" data-key="nav_about" class="hover:text-purple-400 transition-colors">Sobre mí</a>
+                
+                <div class="flex gap-2 border-l border-white/20 pl-4">
+                    <button onclick="changeLanguage('es')" id="btn-es" class="lang-btn active">ES</button>
+                    <button onclick="changeLanguage('en')" id="btn-en" class="lang-btn">EN</button>
+                </div>
+                
+                <a href="#contact" data-key="nav_contact" class="bg-white text-black px-5 py-2 hover:bg-purple-600 hover:text-white transition-all">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="min-h-[85vh] flex items-center px-6 lg:px-12">
+            <div class="max-w-6xl mx-auto w-full">
+                <h1 class="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8" data-key="hero_title">
+                    Strategy, Design<br/><span class="gradient-text">& Production</span>
+                </h1>
+                <p class="text-xl md:text-3xl text-gray-400 max-w-2xl font-light leading-relaxed" data-key="hero_desc">
+                    Creamos experiencias presenciales que funcionan como herramientas de comunicación.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 px-6 lg:px-12 bg-zinc-950">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-xs uppercase tracking-[0.4em] text-purple-500 font-bold mb-20" data-key="nav_projects">Proyectos</h2>
+                
+                <div class="grid gap-40">
+                    <article class="group">
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div class="space-y-6">
+                                <span class="text-gray-500 font-mono text-sm">01 / Web3 Conference</span>
+                                <h3 class="text-5xl font-bold">WalletCon</h3>
+                                <p class="text-gray-400 text-lg" data-key="p1_desc">Producción ejecutiva de conferencia internacional durante Devconnect Buenos Aires.</p>
+                                <div class="flex gap-4 text-xs font-bold text-purple-400 uppercase tracking-widest">
+                                    <span>Strategy</span><span>Logistics</span><span>Production</span>
+                                </div>
+                            </div>
+                            <div class="aspect-[4/3] bg-white/5 border border-white/10 overflow-hidden relative">
+                                <div class="absolute inset-0 flex items-center justify-center text-white/5 text-[10px] uppercase tracking-widest">Espacio para imagen</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="group">
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div class="md:order-2 space-y-6">
+                                <span class="text-gray-500 font-mono text-sm">02 / Team Experience</span>
+                                <h3 class="text-5xl font-bold">Reown Offsite</h3>
+                                <p class="text-gray-400 text-lg" data-key="p2_desc">Diseño y producción de encuentro estratégico para equipo global.</p>
+                                <div class="flex gap-4 text-xs font-bold text-purple-400 uppercase tracking-widest">
+                                    <span>Experience Design</span><span>Hospitality</span>
+                                </div>
+                            </div>
+                            <div class="aspect-[4/3] bg-white/5 border border-white/10 overflow-hidden relative">
+                                <div class="absolute inset-0 flex items-center justify-center text-white/5 text-[10px] uppercase tracking-widest">Espacio para imagen</div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-32 px-6 lg:px-12 border-t border-white/10">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-xs uppercase tracking-[0.4em] text-purple-500 font-bold mb-12" data-key="nav_about">Sobre mí</h2>
+                <div class="text-2xl md:text-4xl font-light leading-tight">
+                    <p data-key="about_full">
+                        Fundado por <strong class="text-white">Maia Minovich</strong>, mam es un estudio boutique que traduce <span class="text-white">15 años de trayectoria</span> en encuentros claros, relevantes y bien ejecutados.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-32 px-6 lg:px-12 bg-white text-black">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end gap-12">
+                <div class="max-w-2xl text-left">
+                    <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-6" data-key="contact_title">Hablemos.</h2>
+                    <p class="text-xl md:text-2xl font-light" data-key="contact_desc">¿Tenés un evento o proyecto en mente?</p>
+                </div>
+                <div class="space-y-4 text-right">
+                    <a href="mailto:hola@mam.com.ar" class="text-2xl md:text-4xl font-bold hover:text-purple-600 transition-colors">hola@mam.com.ar</a>
+                    <div class="flex justify-end gap-6 font-bold uppercase text-xs tracking-widest">
+                        <a href="https://linkedin.com/in/maiaminovich" target="_blank">LinkedIn</a>
+                        <a href="https://instagram.com/mamconsultorio" target="_blank">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const translations = {
+            es: {
+                nav_projects: "Proyectos",
+                nav_about: "Sobre mí",
+                nav_contact: "Contacto",
+                hero_title: 'Strategy, Design<br/><span class="gradient-text">& Production</span>',
+                hero_desc: "Creamos experiencias presenciales que funcionan como herramientas de comunicación.",
+                p1_desc: "Producción ejecutiva de conferencia internacional durante Devconnect Buenos Aires.",
+                p2_desc: "Diseño y producción de encuentro estratégico para equipo global.",
+                about_full: "Fundado por Maia Minovich, mam es un estudio boutique que traduce 15 años de trayectoria en encuentros claros, relevantes y bien ejecutados.",
+                contact_title: "Hablemos.",
+                contact_desc: "¿Tenés un evento o proyecto en mente?"
+            },
+            en: {
+                nav_projects: "Projects",
+                nav_about: "About",
+                nav_contact: "Contact",
+                hero_title: 'Strategy, Design<br/><span class="gradient-text">& Production</span>',
+                hero_desc: "We build in-person experiences that work as powerful communication tools.",
+                p1_desc: "Executive production for an international Web3 conference during Devconnect Buenos Aires.",
+                p2_desc: "Design and production of a strategic gathering for a global team.",
+                about_full: "Founded by Maia Minovich, mam is a boutique studio translating 15 years of experience into clear, relevant, and well-executed gatherings.",
+                contact_title: "Let's talk.",
+                contact_desc: "Do you have an event or project in mind?"
+            }
+        };
+
+        function changeLanguage(lang) {
+            localStorage.setItem('preferredLang', lang);
+            
+            // Cambiar todos los textos con data-key
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            
+            // Actualizar botones de idioma
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.getElementById(`btn-${lang}`);
+            if (activeBtn) activeBtn.classList.add('active');
+            
+            // Atributo lang para SEO
+            document.documentElement.lang = lang;
+        }
+
+        // Ejecución al cargar
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLang') || 'es';
+            changeLanguage(savedLang);
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>
